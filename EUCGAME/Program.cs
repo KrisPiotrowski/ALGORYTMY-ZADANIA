@@ -34,10 +34,10 @@ namespace EUCGAME
             int b = tabInt[1];
             int result = 0;
 
-            if (a <= 0 || b <= 0 || a>= 1000000001 || b >= 1000000001)
+            if (a <= 0 || b <= 0 || a >= 1000000001 || b >= 1000000001)
                 throw new ArgumentException();
 
-            while ((a > b  && a - b > 0) || (b > a && b - a > 0))
+            while ((a > b && a - b > 0) || (b > a && b - a > 0))
             {
                 if (a > b)
                     a -= b;
