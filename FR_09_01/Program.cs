@@ -18,13 +18,13 @@ namespace FR_09_01
             //Console.WriteLine("sprawdz plus(4, 4): " + SprawdzPlus(4, 4));
 
             if (tabInt[0] == 0 && tabInt[1] == 0)
-                Console.WriteLine(4);
+                Console.Write(4);
             else if ((double)tabInt[2] == Math.Sqrt(((double)tabInt[0]* (double)tabInt[0])+ (double)(tabInt[1]* (double)tabInt[1])))
-                Console.WriteLine(3);
+                Console.Write(3);
             else
             {
                 int x = Sprawdz(tabInt[2], tabInt[1]) + Sprawdz(tabInt[2], tabInt[0]);
-                Console.WriteLine(x);
+                Console.Write(x);
             }
 
         }
