@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace EUCGAME
+namespace BINOMS
 {
     class Program
     {
@@ -42,19 +42,19 @@ namespace EUCGAME
             int iteratorM = 0;
             int iteratorPoczL = 0;
 
-            if(b > a - b)
+            if (b > a - b)
             {
-                l = b+1;
+                l = b + 1;
                 iteratorM = a - b;
-                iteratorPoczL = b+2;
+                iteratorPoczL = b + 2;
             }
             else
             {
                 l = a - b + 1;
                 iteratorM = b;
-                iteratorPoczL = a - b +2;
+                iteratorPoczL = a - b + 2;
             }
-            
+
             if (a == 0 || b == 0 || a == b)
             {
                 result = 1;
