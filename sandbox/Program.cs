@@ -10,21 +10,39 @@ namespace sandbox
     {
         static void Main(string[] args)
         {
-            string aa = "";
-            while (1 == 1)
+            int x = Convert.ToInt32(Console.ReadLine());
+            int i = 1;
+            int j = 1;
+            string str = "";
+            while (i <= x)
             {
-                if(Console.ReadLine().ToString() == "")
+                string rdln = Console.ReadLine().ToString();
+                if(rdln != "")
                 {
-                    Console.WriteLine("TEST AAA");
-                    break;
+                    if (j != 9)
+                    {
+                        str += rdln + "?"; //oddzielenie wierszy
+                        j++;
+                    }
+                    else
+                        str += rdln;
                 }
                 else
                 {
-                    aa += Console.ReadLine
-                        ();
+                    i++;
+                    str += "|";
+                    j = 1;
                 }
+                
+                if (i == x && j == 9)
+                    break;
             }
-        }
 
+            Console.WriteLine(str);
+
+            //string[] tab = str.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+            //Console.WriteLine("komorka 0: \n" + tab[0]);
+            //string[] firstTab = tab[0].Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+        }
     }
 }
