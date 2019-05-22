@@ -11,9 +11,6 @@ namespace AL_17_02
         {
             int Q = int.Parse(Console.ReadLine());
 
-            if (Q >= 10001)
-                throw new ArgumentException();
-
             for (int i = 1; i <= Q; i++)
             {
                 bool num = false;
