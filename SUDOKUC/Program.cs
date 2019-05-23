@@ -32,9 +32,16 @@ namespace SUDOKUC
 
                 string[] tab = str.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
 
-                foreach (string g in tab)
+                for(int f = 0; f < tab.Length; f++)
                 {
-                    result += CheckTable(g) + "\n";
+                    if(f< tab.Length - 1)
+                    {
+                        result += CheckTable(tab[f]) + "\n";
+                    }
+                    else
+                    {
+                        result += CheckTable(tab[f]);
+                    }
                 }
                 Console.WriteLine(result);
             }
@@ -65,6 +72,7 @@ namespace SUDOKUC
                 if (x < 1 || x > 9)
                     return "NIE";
             }
+
             //sprawdz rzędy
             for(int i = 0; i < 9; i++)
             {

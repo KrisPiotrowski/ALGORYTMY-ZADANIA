@@ -22,15 +22,21 @@ namespace AL_31_10
         {
             string input = "";
 
-            while(Console.ReadLine() != null)
+            while(1==1)
             {
-                input += Console.ReadLine();
+                string txt = Console.ReadLine().ToString();
+                input += txt;
+                if (txt == "")
+                    break;
+
             }
+
+           // Console.WriteLine("input: " + input);
 
             string[] tab = input.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
             string result = "";
-
-            for (int j = 1; j < tab.Length; j++)
+            
+            for (int j = 0; j < tab.Length; j++)
             {
                 string str = tab[j];
                 int max = 0, max2 = 0, index = 0, index2 = 0;
@@ -39,9 +45,7 @@ namespace AL_31_10
                 for (int i = 0; i < str.Length; i++)
                 {
                     int pos = GetCharPosition(str[i]);
-                    if (pos < 1 && GetCharPosition(str[i]) > 26)
-                        continue;
-                    else
+                    if (pos >= 0 && GetCharPosition(str[i]) <= 25)
                         freq[pos] += 1;
                 }
 
@@ -60,13 +64,14 @@ namespace AL_31_10
                         index2 = i;
                     }
                 }
+                //Console.WriteLine("max:  "+max); //test
+                //Console.WriteLine("max2: "+max2); //test
 
                 if (((double)max > 0 && (double)max2 == 0) || ((double)max / (double)max2 > 2))
-                    result += j.ToString() + " - " + GetCharacter(index);
+                    result += (j + 1).ToString() + " - " + GetCharacter(index)+"\n";
                 else
-                    result += j.ToString() + " - BRAK";
+                    result += (j+1).ToString() + " - BRAK\n";
             }
-
             return result;
         }
 
@@ -78,85 +83,85 @@ namespace AL_31_10
             switch (str)
             {
                 case "A":
-                    return 1;
+                    return 0;
                     break;
                 case "B":
-                    return 2;
+                    return 1;
                     break;
                 case "C":
-                    return 3;
+                    return 2;
                     break;
                 case "D":
-                    return 4;
+                    return 3;
                     break;
                 case "E":
-                    return 5;
+                    return 4;
                     break;
                 case "F":
-                    return 6;
+                    return 5;
                     break;
                 case "G":
-                    return 7;
+                    return 6;
                     break;
                 case "H":
-                    return 8;
+                    return 7;
                     break;
                 case "I":
-                    return 9;
+                    return 8;
                     break;
                 case "J":
-                    return 10;
+                    return 9;;
                     break;
                 case "K":
-                    return 11;
+                    return 10;
                     break;
                 case "L":
-                    return 12;
+                    return 11;
                     break;
                 case "M":
-                    return 13;
+                    return 12;
                     break;
                 case "N":
-                    return 14;
+                    return 13;
                     break;
                 case "O":
-                    return 15;
+                    return 14;
                     break;
                 case "P":
-                    return 16;
+                    return 15;
                     break;
                 case "Q":
-                    return 17;
+                    return 16;
                     break;
                 case "R":
-                    return 18;
+                    return 17;
                     break;
                 case "S":
-                    return 19;
+                    return 18;
                     break;
                 case "T":
-                    return 20;
+                    return 19;
                     break;
                 case "U":
-                    return 21;
+                    return 20;
                     break;
                 case "V":
-                    return 22;
+                    return 21;
                     break;
                 case "W":
-                    return 23;
+                    return 22;
                     break;
                 case "X":
-                    return 24;
+                    return 23;
                     break;
                 case "Y":
-                    return 25;
+                    return 24;
                     break;
                 case "Z":
-                    return 26;
+                    return 25;
                     break;
                 default:
-                    return 0;
+                    return 999;
                     break;
             }
         }
@@ -166,82 +171,82 @@ namespace AL_31_10
 
             switch (x)
             {
-                case 1:
+                case 0:
                     return "a";
                     break;
-                case 2:
+                case 1:
                     return "b";
                     break;
-                case 3:
+                case 2:
                     return "c";
                     break;
-                case 4:
+                case 3:
                     return "d";
                     break;
-                case 5:
+                case 4:
                     return "e";
                     break;
-                case 6:
+                case 5:
                     return "f";
                     break;
-                case 7:
+                case 6:
                     return "g";
                     break;
-                case 8:
+                case 7:
                     return "h";
                     break;
-                case 9:
+                case 8:
                     return "i";
                     break;
-                case 10:
+                case 9:
                     return "j";
                     break;
-                case 11:
+                case 10:
                     return "k";
                     break;
-                case 12:
+                case 11:
                     return "l";
                     break;
-                case 13:
+                case 12:
                     return "m";
                     break;
-                case 14:
+                case 13:
                     return "n";
                     break;
-                case 15:
+                case 14:
                     return "o";
                     break;
-                case 16:
+                case 15:
                     return "p";
                     break;
-                case 17:
+                case 16:
                     return "q";
                     break;
-                case 18:
+                case 17:
                     return "r";
                     break;
-                case 19:
+                case 18:
                     return "s";
                     break;
-                case 20:
+                case 19:
                     return "t";
                     break;
-                case 21:
+                case 20:
                     return "u";
                     break;
-                case 22:
+                case 21:
                     return "v";
                     break;
-                case 23:
+                case 22:
                     return "w";
                     break;
-                case 24:
+                case 23:
                     return "x";
                     break;
-                case 25:
+                case 24:
                     return "y";
                     break;
-                case 26:
+                case 25:
                     return "z";
                     break;
                 default:

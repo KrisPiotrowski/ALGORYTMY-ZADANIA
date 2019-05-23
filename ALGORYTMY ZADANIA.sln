@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AL_31_10", "AL_31_10\AL_31_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUDOKUC", "SUDOKUC\SUDOKUC.csproj", "{3688148B-D37B-4AAF-8022-89512E6E93E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRN", "TRN\TRN.csproj", "{A552DF51-CE34-41A2-917F-E2F14F4A3B5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FANGEN", "FANGEN\FANGEN.csproj", "{D884A601-9DD4-4E3E-9E3C-ADD30DD3A0CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +127,14 @@ Global
 		{3688148B-D37B-4AAF-8022-89512E6E93E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3688148B-D37B-4AAF-8022-89512E6E93E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3688148B-D37B-4AAF-8022-89512E6E93E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A552DF51-CE34-41A2-917F-E2F14F4A3B5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A552DF51-CE34-41A2-917F-E2F14F4A3B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A552DF51-CE34-41A2-917F-E2F14F4A3B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A552DF51-CE34-41A2-917F-E2F14F4A3B5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D884A601-9DD4-4E3E-9E3C-ADD30DD3A0CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D884A601-9DD4-4E3E-9E3C-ADD30DD3A0CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D884A601-9DD4-4E3E-9E3C-ADD30DD3A0CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D884A601-9DD4-4E3E-9E3C-ADD30DD3A0CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
