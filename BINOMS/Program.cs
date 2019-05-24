@@ -9,38 +9,45 @@ namespace BINOMS
 
         static void Main(string[] args)
         {
-            int Q = int.Parse(Console.ReadLine());
-
-            if (Q >= 10001)
-                throw new ArgumentException();
-
-            for (int i = 1; i <= Q; i++)
+            try
             {
-                bool num = false;
-                if (i == Q)
-                    num = true;
-                Solution(num);
+                int Q = int.Parse(Console.ReadLine());
+
+                if (Q >= 10001)
+                    throw new ArgumentException();
+
+                for (int i = 1; i <= Q; i++)
+                {
+                    bool num = false;
+                    if (i == Q)
+                        num = true;
+                    Solution(num);
+                }
+                Console.WriteLine(wynik.ToString());
             }
-            Console.WriteLine(wynik.ToString());
+            catch(Exception e)
+            {
+                return;
+            }
         }
 
         static void Solution(bool j)
         {
 
             string[] tab = (Console.ReadLine()).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            int[] tabInt = Array.ConvertAll(tab, int.Parse);
-            int a = tabInt[0];
-            int b = tabInt[1];
-            int result = 0;
+            long[] tabInt = Array.ConvertAll(tab, long.Parse);
+            long a = tabInt[0];
+            long b = tabInt[1];
+            long result = 0;
 
             if (a < 0 || b < 0 || a > 1000 || b > 1000 || a < b)
                 throw new ArgumentException();
 
-            int l = 0;
-            int m = 1;
-            int iteratorL = a;
-            int iteratorM = 0;
-            int iteratorPoczL = 0;
+            long l = 0;
+            long m = 1;
+            long iteratorL = a;
+            long iteratorM = 0;
+            long iteratorPoczL = 0;
 
             if (b > a - b)
             {
@@ -61,13 +68,13 @@ namespace BINOMS
             }
             else
             {
-                for (int i = iteratorPoczL; i <= iteratorL; i++)
+                for (long i = iteratorPoczL; i <= iteratorL; i++)
                 {
                     l *= i;
                     //Console.WriteLine("l: " + l.ToString());
                 }
 
-                for (int i = m + 1; i <= iteratorM; i++)
+                for (long i = m + 1; i <= iteratorM; i++)
                 {
                     m *= i;
                     //Console.WriteLine("m: " + m.ToString());

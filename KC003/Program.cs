@@ -27,13 +27,11 @@ namespace KC003
             string result = "";
             string text = "";
 
-
-            
             while (1 == 1)
             {
                 string t = Console.ReadLine().ToString();
 
-                if (t != string.Empty)
+                if (t != string.Empty && t!= null)
                 {
                     text += t + "?";
                 }

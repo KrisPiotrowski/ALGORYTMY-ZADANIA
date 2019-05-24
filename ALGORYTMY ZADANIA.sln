@@ -45,6 +45,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRN", "TRN\TRN.csproj", "{A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FANGEN", "FANGEN\FANGEN.csproj", "{D884A601-9DD4-4E3E-9E3C-ADD30DD3A0CF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Opisy do zadań", "Opisy do zadań", "{5A76FD56-6975-4EFA-BC01-A1106654E5CF}"
+	ProjectSection(SolutionItems) = preProject
+		opisy do algorytmów.docx = opisy do algorytmów.docx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

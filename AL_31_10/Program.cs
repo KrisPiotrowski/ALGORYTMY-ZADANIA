@@ -1,37 +1,38 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace AL_31_10
 {
     class Program
     {
+
         static StringBuilder wynik = new StringBuilder(100000);
 
         static void Main(string[] args)
         {
-
+            try
+            { 
             wynik.Append($"{Solution()}\n");
-
             Console.WriteLine(wynik.ToString());
+            }
+            catch(Exception e)
+            {
+                return;
+            }
         }
 
         static string Solution()
         {
             string input = "";
+            string txt;
 
-            while(1==1)
+            while ((txt = Console.ReadLine().ToString()) != null && txt != "")
             {
-                string txt = Console.ReadLine().ToString();
                 input += txt;
-                if (txt == "")
-                    break;
-
             }
-
-           // Console.WriteLine("input: " + input);
+            
+            // Console.WriteLine("input: " + input);
 
             string[] tab = input.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
             string result = "";
@@ -253,6 +254,9 @@ namespace AL_31_10
                     return "";
                     break;
             }
+
+
         }
+
     }
 }
