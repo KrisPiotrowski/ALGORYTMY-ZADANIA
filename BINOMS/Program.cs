@@ -27,6 +27,8 @@ namespace BINOMS
             }
             catch(Exception e)
             {
+
+                Console.WriteLine(e);
                 return;
             }
         }
@@ -35,19 +37,19 @@ namespace BINOMS
         {
 
             string[] tab = (Console.ReadLine()).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            long[] tabInt = Array.ConvertAll(tab, long.Parse);
-            long a = tabInt[0];
-            long b = tabInt[1];
-            long result = 0;
+            decimal[] tabInt = Array.ConvertAll(tab, decimal.Parse);
+            decimal a = tabInt[0];
+            decimal b = tabInt[1];
+            decimal result = 0;
 
             if (a < 0 || b < 0 || a > 1000 || b > 1000 || a < b)
                 throw new ArgumentException();
 
-            long l = 0;
-            long m = 1;
-            long iteratorL = a;
-            long iteratorM = 0;
-            long iteratorPoczL = 0;
+            decimal l = 0;
+            decimal m = 1;
+            decimal iteratorL = a;
+            decimal iteratorM = 0;
+            decimal iteratorPoczL = 0;
 
             if (b > a - b)
             {
@@ -68,13 +70,13 @@ namespace BINOMS
             }
             else
             {
-                for (long i = iteratorPoczL; i <= iteratorL; i++)
+                for (decimal i = iteratorPoczL; i <= iteratorL; i++)
                 {
                     l *= i;
                     //Console.WriteLine("l: " + l.ToString());
                 }
 
-                for (long i = m + 1; i <= iteratorM; i++)
+                for (decimal i = m + 1; i <= iteratorM; i++)
                 {
                     m *= i;
                     //Console.WriteLine("m: " + m.ToString());
@@ -84,6 +86,7 @@ namespace BINOMS
             }
 
             if (!j)
+
                 wynik.Append($"{result}\n");
             else
                 wynik.Append($"{result}");

@@ -52,6 +52,7 @@ namespace AL_13_01
             {
                 result += y.ToString() + " ";
             }
+            
 
             if (!j)
                 wynik.Append($"{result}\n");

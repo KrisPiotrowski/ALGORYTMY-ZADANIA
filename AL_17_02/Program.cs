@@ -9,30 +9,37 @@ namespace AL_17_02
 
         static void Main(string[] args)
         {
-            int Q = int.Parse(Console.ReadLine());
-
-            for (int i = 1; i <= Q; i++)
+            try
             {
-                bool num = false;
-                if (i == Q)
-                    num = true;
-                Solution(num);
+                long Q = long.Parse(Console.ReadLine());
+
+                for (long i = 1; i <= Q; i++)
+                {
+                    bool num = false;
+                    if (i == Q)
+                        num = true;
+                    Solution(num);
+                }
+                Console.WriteLine(wynik.ToString());
             }
-            Console.WriteLine(wynik.ToString());
+            catch(Exception e)
+            {
+                return;
+            }
         }
 
         static void Solution(bool j)
         {
-            int len = Convert.ToInt32(Console.ReadLine());
+            long len = Convert.ToInt64(Console.ReadLine());
             string[] tab = (Console.ReadLine()).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             if (len != tab.Length)
                 throw new ArgumentException();
-            int[] tabInt = Array.ConvertAll(tab, int.Parse);
+            long[] tablong = Array.ConvertAll(tab, long.Parse);
 
-            int result = 0;
-            int singleLen = 0;
-            int x1 = 0;
-            int x2 = 0;
+            long result = 0;
+            long singleLen = 0;
+            long x1 = 0;
+            long x2 = 0;
 
             if (len ==1)
             {
@@ -44,13 +51,13 @@ namespace AL_17_02
             }
             else
             {
-                x1 = tabInt[0];
-                x2 = tabInt[1];
+                x1 = tablong[0];
+                x2 = tablong[1];
                 result = 2;
                 singleLen = 2;
-                for(int i = 2; i < tabInt.Length; i++)
+                for(long i = 2; i < tablong.Length; i++)
                 {
-                    if (tabInt[i] == x1 || tabInt[i] == x2 || (x1 == x2 && x1 != tabInt[i]))
+                    if (tablong[i] == x1 || tablong[i] == x2 || (x1 == x2 && x1 != tablong[i]))
                         singleLen += 1;
                     else
                         singleLen = 2;
@@ -58,14 +65,14 @@ namespace AL_17_02
                     if (singleLen > result)
                         result = singleLen;
 
-                    if((tabInt[i] != x1 && tabInt[i] != x2) ||(x1 == tabInt[i] && x2 != tabInt[i]))
+                    if((tablong[i] != x1 && tablong[i] != x2) ||(x1 == tablong[i] && x2 != tablong[i]))
                     {
                         x1 = x2;
-                        x2 = tabInt[i];
+                        x2 = tablong[i];
                     }
-                    else if (x1 == x2 && x1 != tabInt[i])
+                    else if (x1 == x2 && x1 != tablong[i])
                     {
-                        x2 = tabInt[i];
+                        x2 = tablong[i];
                     }
                 }
             }

@@ -36,22 +36,22 @@ namespace FR_09_06
             foreach(char x in word)
             {
                 //Console.WriteLine($"tO JEST LITERA {x} I JEJ POZYCJA TO {GetCharPosition(x)}");
-                if(GetCharPosition(x)< MinVal)
+                if (GetCharPosition(x) < MinVal)
                 {
                     MinVal = GetCharPosition(x);
                     //Console.WriteLine($"PO WYKONANIU BLOKU  IF (WAR 1) DLA LITERY {x} MINVAL WYNOSI {MinVal} ");
                 }
-                else if (GetCharPosition(x) > MaxVal)
+
+                if (GetCharPosition(x) > MaxVal)
                 {
                     MaxVal = GetCharPosition(x);
                     //Console.WriteLine($"PO WYKONANIU BLOKU  IF (WAR 2) DLA LITERY {x} MAXVAL WYNOSI {MaxVal} ");
                 }
             }
 
-            if(word.Length > 0)
-            {
-                result = MaxVal - MinVal;
-            }
+           // Console.WriteLine($"PRZED OBLICZENIEM RESULT MINVAL = {MinVal} AND MAXVAL = {MaxVal}");
+            result = MaxVal - MinVal;
+
 
             if (!j)
                 wynik.Append($"{result}\n");
