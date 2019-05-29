@@ -6,7 +6,6 @@ namespace AL_17_02
     class Program
     {
         static StringBuilder wynik = new StringBuilder(100000);
-
         static void Main(string[] args)
         {
             try
@@ -35,7 +34,11 @@ namespace AL_17_02
             if (len != tab.Length)
                 throw new ArgumentException();
             long[] tablong = Array.ConvertAll(tab, long.Parse);
-
+            //Console.WriteLine("tabLong: ");
+            //foreach(long xx in tablong)
+            //{
+            //    Console.Write(xx+" ");
+            //}
             long result = 0;
             long singleLen = 0;
             long x1 = 0;
@@ -76,9 +79,8 @@ namespace AL_17_02
                     }
                 }
             }
-
             if (!j)
-                wynik.Append($"{result}\n");
+                wynik.Append($"{result} 0 \n");
             else
                 wynik.Append($"{result}");
         }

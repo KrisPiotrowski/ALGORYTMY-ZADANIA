@@ -8,7 +8,7 @@ namespace AL_13_01
 {
     class Program
     {
-        static StringBuilder wynik = new StringBuilder(100000);
+        static StringBuilder wynik = new StringBuilder(1000000);
 
         static void Main(string[] args)
         {
@@ -30,7 +30,7 @@ namespace AL_13_01
             int[] tab = new int[x];
             int i = 1;
             bool w = true;
-            string result = "";
+            StringBuilder result = new StringBuilder(1000000);
 
             while (i <= x)
             {
@@ -48,11 +48,11 @@ namespace AL_13_01
                 }
             }
 
-            foreach(int y in tab)
+            foreach (int y in tab)
             {
-                result += y.ToString() + " ";
+                result.Append($"{y} ");
             }
-            
+
 
             if (!j)
                 wynik.Append($"{result}\n");
