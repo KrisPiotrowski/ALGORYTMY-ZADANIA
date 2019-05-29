@@ -23,31 +23,32 @@ namespace FR_09_12
                 tab[1, i] = x[1];
             }
 
-            Stack<int> s = new Stack<int>();
-            s.Push(tab[1,0]);
+            int currentMin = tab[1, Q - 1];
+            bool isAdjacent = true;
+            int cnt = 1;
 
-            for (int i = 1; i < Q; i++)
+            for (int i = Q-2; i >=0; i--)
             {
-                if(tab[1,i] > s.Peek())
+                if(isAdjacent == true)
                 {
-                    s.Push(tab[1,i]);
+                    if (tab[0, i + 1] - tab[0, i] > 1)
+                        isAdjacent = false;
                 }
-                else if (tab[1,i] == s.Peek() && (tab[0,i] - tab[0,i-1] > 1))
+
+                if(tab[1,i] < currentMin)
                 {
-                    s.Push(tab[1, i]);
+                    currentMin = tab[1, i];
+                    cnt++;
+                    isAdjacent = true; // do zweryfikowania
                 }
-                else if (tab[1,i] < s.Peek())
+                else if (tab[1, i] == currentMin && isAdjacent == false)
                 {
-                    while (s.Count > 0 && s.Peek() > tab[1,i])
-                    {
-                        s.Pop();
-                    }
-                    s.Push(tab[1,i]);
+                    cnt++;
+                    isAdjacent = true;
                 }
-                //Console.WriteLine("i: " + i + ", s.Cnt: " + s.Count);
             }
 
-            Console.WriteLine(s.Count);
+            Console.WriteLine(cnt);
         }
 
         static int[] GetNumber1()
